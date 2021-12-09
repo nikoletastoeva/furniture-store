@@ -21,7 +21,8 @@ const Home1 = () => {
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: 'black',
-        color: "#fefefe"
+        color: "#fefefe",
+        
 
     }
 
@@ -75,7 +76,7 @@ const Home1 = () => {
                 </div>
             </section>
             <section>
-                <h2>BEST PRODUCTS</h2>
+                <h2 className="text-center  p-5 ">BEST PRODUCTS</h2>
                 <div className="container mydiv">
                     <div className="row row-cols-3">
                     {products.map(x => <ProductCard key={x._id} product={x}/>)}
