@@ -45,7 +45,8 @@ const Create = () => {
 
         <>
             <section className="create-container">
-                <form className="create-form" method='POST' onSubmit={onCreateHandler} >
+                <h2 className="p-5 ms-5">Create your custom product</h2>
+                <form className="create-form " method='POST' onSubmit={onCreateHandler} >
                     <div className="type">
                         <label htmlFor="chairs">
                             <input type="radio" id="chairs" name="type" value="chairs" checked={selectedType === 'chairs'} onChange={handleChange} />

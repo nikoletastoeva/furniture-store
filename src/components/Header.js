@@ -36,7 +36,7 @@ const Header = () => {
                     </Nav>
                     <Button to="/create" as={Link} style={styleButton}>Create product</Button>
                     <Nav>
-                        <Nav.Link eventKey={2} to="/register" as={Link}>Register</Nav.Link>
+                        <Nav.Link to="/register" as={Link}>Register</Nav.Link>
                         <Nav.Link to="/login" as={Link}>Login</Nav.Link>
                     </Nav>
                 </NavbarCollapse>
