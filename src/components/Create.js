@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap"
 import { useState } from "react/cjs/react.development"
 import "./Create.css"
 
@@ -43,7 +44,7 @@ const Create = () => {
 
     return (
 
-        <>
+        <Container>
             <section className="create-container">
                 <h2 className="p-5 ms-5">Create your custom product</h2>
                 <form className="create-form " method='POST' onSubmit={onCreateHandler} >
@@ -84,7 +85,7 @@ const Create = () => {
 
             </section>
 
-        </>
+        </Container>
 
     )
 }
