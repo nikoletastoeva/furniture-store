@@ -3,7 +3,7 @@ import { useEffect, useState } from "react/cjs/react.development"
 import "./ProductCards.css"
 import * as itemsService from '../services/itemsService'
 import ProductCard from "./ProductCard";
-import { Link } from "react-router-dom";
+
 
 
 

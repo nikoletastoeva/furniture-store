@@ -76,8 +76,9 @@ const Create = () => {
                     <input type='text' name="title" placeholder="Title: write something personal..." />
                     </div>
                     <div className="price">
-                    
-                    <input type='text' name="price" placeholder="Price" />
+                    <p>
+                    <input type='text' name="price" placeholder="Price" /> &euro;
+                    </p>
                     </div>
                     <div className="description">
                     <h4 htmlFor="description">Description</h4>
