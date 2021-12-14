@@ -1,0 +1,92 @@
+{
+   "1": {
+        "title": "Ringo blue",
+        "by": "Sidiz",
+        "imageUrl": "ringo.jpg",
+        "description": "Ringo. A chair that grows with your children. Ergonomic chair suitable for children aged 4-12 years or height from 110 cm to 160 cm, providing superb ergonomics and comfort for their daily discovery, creative flow and various fun activities at their primary workplace at home or at school. The built-in footrest allows their legs to relax, while being propped up on a regular height table. The advantages: 1. Four- step growing function: simultaneous adjustment of the backrest’s height and the seeat’s depth. 2. Seat height adjustment range from 40 cm to 50 cm. 3. At a load of 25 kg or more, the wheels lock to prevent accidental sliding of the chair. 4. Easy to clean. 5. Optional foot support, providing comfort and convenience for younger children. 6. Available in 3 textile colors – blue, green and pink.",
+        "likes": [],
+        "price": "399",
+        "type": "chair",
+        "_id": "1"
+    },
+    "2": {
+        "title": "FREEDOM ERGO CHAIR, BROWN LEATHER",
+        "by": "Humanscale",
+        "imageUrl": "freedom.jpg",
+        "description": "Described by The New York Times as “the gold standard in office seating,” the Freedom chair redefines the concept of traditional task chairs. Designer Niels Diffrient aimed to design an office chair that automatically adapts to the user, allowing them to move freely from posture to posture. Diffrient’s unique approach removed complexities found in other chairs, such as cumbersome recline levers and back tension dials for a truly ergonomic task chair. As a result, he developed a recline mechanism that perfectly adjusts to the user, definitively reinventing modern task seating to be truly simple, functional and beautiful.",
+        "likes": [],
+        "price": "1.995",
+        "type": "chair",
+        "_id": "2"
+    },
+    "3": {
+        "title": "T50 ERGONOMIC TASK CHAIR",
+        "by": "Sidiz",
+        "imageUrl": "tn50.jpg",
+        "description": "Ergonomic task chair which offers consistently high comfort level, regardless of the user's weight and height, their posture or chair settings. Sidiz features the latest generation of mesh, to offer enhanced support and contemporary aesthetics. The chair not only provides complete comfort along with permeability and elasticity, but also delivers refined beauty and usability in its slim design.",
+        "likes": [],
+        "price": "477",
+        "type": "chair",
+        "_id": "3"
+    },
+    "4": {
+        "title": "ADDIT BENTO® ERGONOMIC TOOLBOX",
+        "by": "DataFlex",
+        "imageUrl": "toolbox.jpg",
+        "description": "Inspired by the Japanese lunch box, the Addit Bento® ergonomic toolbox neatly stores your personal items inside. It also ergonomically supports your favourite devices or documents – whether you are working at your desk from the office or from home.",
+        "likes": [],
+        "price": "96",
+        "type": "work tools",
+        "_id": "4"
+    },
+    "5": {
+        "title": "M8 MONITOR ARM",
+        "by": "Humanscale Design Studio",
+        "imageUrl": "M8-monitor-arm.jpg",
+        "description": "By redefining the capabilities of a monitor arm, Humanscale created the M8, which combines incredible weight capacity with a stylish, slim profile. Like all Humanscale monitor arms, the M8 allows the user to work in a healthy posture through setting one or multiple monitors at an optimal distance and height, collaborate easier through effortless screen sharing, and increase desk space. Through its fusion of flexibility and strength, the M8 accommodates any single or dual monitor configuration weighing up to 18kg (40 lbs.). Unlike other high-capacity monitor arms with bulky designs, the M8 offers easy adjustment and flawless ergonomic function in an articulating monitor arm.",
+        "likes": [],
+        "price": "317",
+        "type": "work tools",
+        "_id": "5"
+    },
+    "6": {
+        "title": "ADDIT BENTO® ERGONOMIC TOOLBOX 900, WHITE",
+        "by": "DataFlex",
+        "imageUrl": "Addit-bento-ergonomic-toolbox-900-white.jpg",
+        "description": "Inspired by the Japanese lunch box, the Addit Bento® ergonomic toolbox neatly stores your personal items inside. It also ergonomically supports your favourite devices or documents – whether you are working at your desk from the office or from home.",
+        "likes": [],
+        "price": "96",
+        "type": "work tools",
+        "_id": "6"
+    },
+    "7": {
+        "title": "KAIDI, 70×140 CM",
+        "by": "KAIDI",
+        "imageUrl": "kaidi1.jpg",
+        "description": "Sedentary habits have long been listed as one of the top ten health hazards in the world. Most of us spend more than 60% of our time sitting every day, with an average of more than 9 hours, and half of us are sitting continuously all day long. Here is a sit-stand table that ensures a healthy dose of work and productivity. This height adjustable desk, designed for the home or the office will help you feel more dynamic and comfortable through out the work day. Its is powered by two quiet motors, making the shift between your sit and stand mode a breeze.The I-shaped steel frame structure remains stable even when raised to its highest position.",
+        "likes": [],
+        "price": "429",
+        "type": "tables",
+        "_id": "7"
+    },
+    "8": {
+        "title": "VOGA",
+        "by": "VOGA",
+        "imageUrl": "Voga.jpg",
+        "description": "A clean, basic, no-frills desk made of square profiles. The table top extends tothe edge of the frame, giving it a nice look. The10 mm gap between the top and the frame, creates a sense of a floating table top – made from MFC.",
+        "likes": [],
+        "price": "150",
+        "type": "tables",
+        "_id": "8"
+    },
+    "9": {
+        "title": "ADDIT BENTO® MONITOR RISER 113",
+        "by": "Robert Bronwasser",
+        "imageUrl": "Voga.jpg",
+        "description": "The beauty of a design that is simple yet effective: this Addit Bento® monitor riser helps to improve your body posture by raising your monitor to eye-level. Its rubber feet ensure your monitor is perfectly stable and your desk remains scratch-free. Designed by Robert Bronwasser. Color: Black or White",
+        "likes": [],
+        "price": "59",
+        "type": "work tools",
+        "_id": "9"
+    }
+}
