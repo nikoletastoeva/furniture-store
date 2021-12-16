@@ -12,7 +12,7 @@ export const login = async (email, password) => {
     });
 
     let jsonResult = await res.json();
-    console.log(res.ok);
+    
 
     if (res.ok) {
         return jsonResult;
@@ -32,4 +32,12 @@ export const register = async (email, password) => {
     let jsonResult = await res.json();
     return jsonResult
 
+}
+
+export const logout = (token) => {
+    return fetch(`${baseUrl}/users/logout`, {
+        headers: {
+            'X-Authorization': token,
+        }
+    })
 }
