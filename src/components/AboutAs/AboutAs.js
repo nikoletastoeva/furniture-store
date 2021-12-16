@@ -1,7 +1,5 @@
-import { Button, Navbar, Container, Nav, Carousel, Col, Row, Image } from "react-bootstrap";
-import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
-import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 
+import './AboutAs.css'
 
 const About = () => {
 

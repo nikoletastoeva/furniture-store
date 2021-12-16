@@ -1,8 +1,8 @@
 import { Container } from "react-bootstrap"
 import { useState } from "react/cjs/react.development"
-import "./Create.css"
+import "./Edit.css"
 
-const Create = () => {
+const Edit = () => {
     let buttonStyle = {
         fontSize: "16px",
         lineHeight: "16px",
@@ -46,7 +46,7 @@ const Create = () => {
 
         <Container>
             <section className="create-container">
-                <h2 className="p-5 ms-5">Create your custom product</h2>
+                <h2 className="p-5 ms-5">Edit your product</h2>
                 <form className="create-form " method='POST' onSubmit={onCreateHandler} >
                     <div className="type">
                         <label htmlFor="chairs">
@@ -66,25 +66,25 @@ const Create = () => {
                         <label htmlFor="text">Choose a image:</label>
                         
                         <div className="images-for-product">
-                            <a onClick={imgSelected}> <img className="images" src="ringo.jpg" name="ringo.jpg" /></a>
-                            <img className="images" src="ringo.jpg" />
-                            <img className="images" src="ringo.jpg" />
+                            <a onClick={imgSelected}> <img className="images" src="/ringo.jpg" name="ringo.jpg" /></a>
+                            <img className="images" src="/ringo.jpg" />
+                            <img className="images" src="/ringo.jpg" />
                         </div>
                     </div>
                     <div className="title">
                     
-                    <input type='text' name="title" placeholder="Title: write something personal..." />
+                    <input type='text' name="title" />
                     </div>
                     <div className="price">
                     <p>
-                    <input type='text' name="price" placeholder="Price" /> &euro;
+                    <input type='text' name="price" /> &euro;
                     </p>
                     </div>
                     <div className="description">
                     <h4 htmlFor="description">Description</h4>
-                    <input type='text' name="description" defaultValue={description} disabled/>
+                    <input type='text' name="description" />
                     </div>
-                    <input type="submit" value="Create Me!" style={buttonStyle} />
+                    <input type="submit" value="Edit" style={buttonStyle} />
 
                 </form>
 
@@ -94,4 +94,4 @@ const Create = () => {
 
     )
 }
-export default Create
+export default Edit

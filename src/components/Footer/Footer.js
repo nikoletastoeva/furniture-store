@@ -1,5 +1,5 @@
 
-
+import "./Footer.css"
 
 const Footer = () => {
 

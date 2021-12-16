@@ -1,13 +1,13 @@
 
 import { useEffect, useState } from "react/cjs/react.development"
-import "./ProductCards.css"
-import * as itemsService from '../services/itemsService'
-import ProductCard from "./ProductCard";
+import * as itemsService from '../../services/itemsService'
+import ProductCard from "../ProductCard/ProductCard";
+
+import "./Home.css"
 
 
 
-
-const Home1 = () => {
+const Home = () => {
     let buttonStyle = {
         fontSize: "16px",
         lineHeight: "16px",
@@ -65,7 +65,7 @@ const Home1 = () => {
                                 <p>Are you experiencing repetitive stress issues like back aches, neck stiffness or leg numbness due to poor ergonomics in your office set up? Click on your paint point and learn more about what could be causing it. For complete self-assessment of your workstation please take our Ergonomic Assessment.
                                 </p>
                             </div>
-                            <button href="/chairs" style={buttonStyle}>All chairs</button>
+                            <button href="/all-products" style={buttonStyle}>All products</button>
                         </div>
                     </div>
                 </div>
@@ -89,4 +89,4 @@ const Home1 = () => {
         </div>
     )
 }
-export default Home1
+export default Home

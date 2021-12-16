@@ -1,19 +1,19 @@
 
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import { Route, Router } from 'react-router-dom'
-import About from "./components/AboutAs";
-import Footer from "./components/Footer";
-import Home1 from "./components/Home1";
+import About from "./components/AboutAs/AboutAs";
+import Footer from "./components/Footer/Footer";
+import Home1 from "./components/Home/Home";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import Create from "./components/Create";
-import Details from "./components/Details";
-import CustomProducts from "./components/CustomProducts";
-import Edit from "./components/Edit";
+import Create from "./components/Create/Create";
+import Details from "./components/Details/Details";
+import CustomProducts from "./components/CustomProducts/CustomProducts";
+import Edit from "./components/Edit/Edit";
 import { AuthProvider } from "./contexts/AuthContext";
 import { GuardedRoute } from "./components/Common/GuardedRoute";
-import DetailsCustomProduct from "./components/DetailsCustomProduct";
-import MyLove from "./components/MyLove";
+import DetailsCustomProduct from "./components/DetailsCustomProduct/DetailsCustomProduct";
+import MyLove from "./components/MyLove/MyLove";
 import Logout from "./components/Logout";
 
 

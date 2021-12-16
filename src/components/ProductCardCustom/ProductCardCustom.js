@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import "./ProductCards.css"
+import "./ProductCardCustom.css"
 
-const ProductCard = (match) => {
+const ProductCardCustom = (match) => {
     let buttonStyle = {
         fontSize: "16px",
         lineHeight: "16px",
@@ -28,7 +28,7 @@ const ProductCard = (match) => {
             <div className="bbb_deals">
                 <div className="bbb_deals_slider_container">
                     <div className=" bbb_deals_item">
-                        <div className="bbb_deals_image"><img src={match.product.imageUrl} alt="" /></div>
+                        <div className="bbb_deals_image"><img src={match.product.imageUrl} alt="" style={{ "height": "400px" }} /></div>
                         <div className="bbb_deals_content">
                             <div className="bbb_deals_info_line d-flex flex-row justify-content-start">
 
@@ -42,7 +42,7 @@ const ProductCard = (match) => {
                                 <div className="bbb_deals_item_price ml-auto">{match.product.price} &euro;</div>
                             </div>
                             <div className=" d-flex flex-row justify-content-start">
-                                <Link to={`details/${match.product._id}`} style={buttonStyle}>Details</Link>
+                                <Link to={`details-custom-product/${match.product._id}`} style={buttonStyle}>Details</Link>
 
                             </div>
 
@@ -53,4 +53,4 @@ const ProductCard = (match) => {
         </div>
     )
 }
-export default ProductCard
+export default ProductCardCustom
