@@ -4,11 +4,13 @@ import { useState } from 'react/cjs/react.development'
 import * as itemsService from '../../services/itemsService'
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext"
+import * as heartsService from '../../services/heartsService'
 
 import "./DetailsCustomProduct.css"
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 
-const DetailsCustomProduct = ({ match }) => {
+const DetailsCustomProduct = ({ history }) => {
     let buttonStyle = {
         fontSize: "16px",
         lineHeight: "16px",
@@ -26,19 +28,61 @@ const DetailsCustomProduct = ({ match }) => {
         textDecoration: "none"
 
     }
+    const { productId } = useParams()
     const [product, setProduct] = useState([])
-    let id = match.params.productId
+    const [classNameLoveBtn, setclassNameLoveBtn] = useState('')
+    const [classNamedisLikeBtn, setclassNamedisLikeBtn] = useState('')
+    let { user } = useAuthContext()
+
+
     useEffect(() => {
-        itemsService.getOneCustom(id)
+        itemsService.getOneCustom(productId)
             .then(result => {
                 setProduct(result)
             })
     }, [])
 
+    useEffect(() => {
+        heartsService.getOneHeart(productId, user._id)
+            .then(result => {
+                if(result){
+                    setclassNameLoveBtn('hide')
+                    setclassNamedisLikeBtn('btn btn-outline-danger')
+                }else{
+                    setclassNameLoveBtn('btn btn-outline-danger')
+                    setclassNamedisLikeBtn('hide')
+                }
+                
+            })
+    }, [])
+
     const deleteHandler = (e) => {
         e.preventDefault()
+        itemsService.deleteProduct(productId, user.accessToken)
+        .then((res) => {
+            history.push('/custom-products')
+        })
     }
-    let { user } = useAuthContext()
+   
+   
+    const loveHandler = (e) => {
+
+        heartsService.like(productId, user._id, product, user.accessToken)
+            .then((res) => {
+                setProduct(state => ({ ...product, hearts: [...state.hearts, user._id] }))
+
+            })
+
+    }
+
+    const disLikeHandler = (e) => {
+        heartsService.dislike(productId, user._id, user.accessToken)
+        .then((res) => {
+            history.push('/my-love')
+        })
+    }
+
+    
 
     let ownerButtons = (
         <div>
@@ -49,12 +93,22 @@ const DetailsCustomProduct = ({ match }) => {
     )
     let likeButtons = (
 
-        <button className='btn btn-outline-danger'>
+        <button onClick={loveHandler} className={classNameLoveBtn} disabled={product.hearts?.includes(user._id)}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
             </svg> Love</button>
 
     )
+
+    let disLikeButtons = (
+
+        <button onClick={disLikeHandler} className={classNamedisLikeBtn}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+            </svg> disLike</button>
+
+    )
+
 
 
     return (
@@ -68,8 +122,12 @@ const DetailsCustomProduct = ({ match }) => {
                     <p><b>By:</b> {product.by}</p>
                     <p><b>Price:</b> {product.price} &euro;</p>
                     <p>{product.description}</p>
-                    {user.email ? likeButtons : ""}
 
+                    {user.email && (user._id == product._ownerId
+                        ? ownerButtons
+                        : likeButtons)}
+
+                        {disLikeButtons}
 
                 </div>
                 <div className="col-lg-6 order-lg-1">
