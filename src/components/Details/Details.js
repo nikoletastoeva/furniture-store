@@ -29,51 +29,18 @@ const Details = ({ match }) => {
     }
     const {productId} = useParams()
     const [product, setProduct] = useState([])
-    let id = match.params.productId
+    
+
     useEffect(() => {
-        itemsService.getOne(id)
+        itemsService.getOne(productId)
             .then(result => {
                 setProduct(result)
             })
     }, [])
 
-    const deleteHandler = (e) => {
-        e.preventDefault()
-    }
-    let { user } = useAuthContext()
 
-    const loveHandler = (e) => {
-        if(user._id === product._ownerId){
-            return
-        }
 
-        if(product.hearts.includes(user._id)){
-            //ToDo
-            return
-        }
-
-        heartsService.like(productId, user._id, product, user.accessToken)
-        .then((res) => {
-            setProduct(state => ({...product, hearts: [...state.hearts, user._id]}))
-            
-        })
-    }
-
-    let ownerButtons = (
-        <div>
-            <Link style={buttonStyle} to={`/edit/${product._id}`}>Edit</Link>
-            <button style={buttonStyle} onClick={deleteHandler}>Delete</button>
-        </div>
-
-    )
-    let likeButtons = (
-
-        <button onClick={loveHandler} className='btn btn-outline-danger'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
-                <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
-            </svg> Love</button>
-
-    )
+    
 
 
     return (
@@ -89,8 +56,6 @@ const Details = ({ match }) => {
                     <p><b>By:</b> {product.by}</p>
                     <p><b>Price:</b> {product.price} &euro;</p>
                     <p>{product.description}</p>
-                    {user.email ? likeButtons : ""}
-
 
                 </div>
                 <div className="col-lg-6 order-lg-1">
