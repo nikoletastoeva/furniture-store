@@ -46,7 +46,6 @@ const Create = ({ history }) => {
         
     }
 
-    let [selectedType, setSelectedType] = useState('chairs')
     let [selectedType, setSelectedType] = useState('')
 
     function handleChange(e) {
