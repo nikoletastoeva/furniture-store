@@ -1,6 +1,7 @@
 import * as authService from '../../services/authService'
 import { Link } from "react-router-dom"
 import "./Register.css"
+import { useAuthContext } from '../../contexts/AuthContext'
 
 const Register = ({history}) => {
 	let buttonStyle = {
@@ -19,16 +20,19 @@ const Register = ({history}) => {
         color: "#fefefe"
 
     }
+
+	const {login} = useAuthContext()
+	
 	const onRegisterHandler = (e) => {
 		e.preventDefault();
 
         let formData = new FormData(e.currentTarget);
 		let username = formData.get('email')
 		let password = formData.get('password')
-		console.log(password);
+		
 		authService.register(username, password)
 		.then((authData) => {
-			console.log(authData)
+			login(authData)
 			history.push('/')
 		})
 		.catch(err => {

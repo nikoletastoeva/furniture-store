@@ -30,7 +30,13 @@ export const register = async (email, password) => {
         body: JSON.stringify({email, password})
     })
     let jsonResult = await res.json();
-    return jsonResult
+    if(res.ok){
+        return jsonResult
+    }else{
+        throw jsonResult.message;
+    }
+    
+    
 
 }
 
