@@ -17,12 +17,17 @@ import MyLove from "./components/MyLove/MyLove";
 import Logout from "./components/Logout";
 
 
+import React from "react";
+export const Context = React.createContext();
+
+
 
 function App() {
 
   return (
     <>
       <AuthProvider>
+        
         <Header />
 
 
@@ -38,18 +43,17 @@ function App() {
 
         <Route>
 
-          <GuardedRoute path="/create">
-            <Create />
-          </GuardedRoute>
+          
+        <Route path='/create' exact component={Create} />
+        
+        <Route path='/my-love' exact component={MyLove} />
+        
 
-          <GuardedRoute path="/my-love">
-            <MyLove />
-          </GuardedRoute>
-
-          <Route path="/edit/:productsId" exact component={Edit} />
+          <Route path="/edit/:productId" exact component={Edit} />
         </Route>
 
         <Footer />
+        
       </AuthProvider>
     </>
   );
