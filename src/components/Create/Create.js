@@ -3,6 +3,7 @@ import { useState } from "react/cjs/react.development"
 import "./Create.css"
 import * as itemsService from '../../services/itemsService'
 import { useAuthContext } from "../../contexts/AuthContext"
+import { Redirect } from "react-router-dom"
 
 const Create = ({ history }) => {
     let buttonStyle = {
@@ -36,6 +37,7 @@ const Create = ({ history }) => {
         let currentdImage = e.target.name
         setImageUrl(currentdImage)
         e.target.className = 'images active'
+
        Array.from(e.target.parentElement.parentElement.children).map(a => {
            if(a.name !== currentdImage){
                a.childNodes[1].className = "images"
@@ -45,12 +47,13 @@ const Create = ({ history }) => {
     }
 
     let [selectedType, setSelectedType] = useState('chairs')
+    let [selectedType, setSelectedType] = useState('')
 
     function handleChange(e) {
-        console.log(e.target.value);
+        
         setSelectedType(e.target.value);
 
-        if (e.target.value == 'chair') {
+        if (e.target.value == 'chairs') {
             setImageUrls(imagesChair)
 
         } else if (e.target.value == 'sit-stand') {
@@ -83,7 +86,7 @@ const Create = ({ history }) => {
             by
         }, user.accessToken)
             .then(result => {
-                console.log(result);
+                
                 history.push('/custom-products')
             })
 
