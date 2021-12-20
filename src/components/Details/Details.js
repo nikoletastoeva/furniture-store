@@ -4,8 +4,10 @@ import { useState } from 'react/cjs/react.development'
 import * as itemsService from '../../services/itemsService'
 import { Link } from "react-router-dom";
 import { useAuthContext } from '../../contexts/AuthContext';
+import * as heartsService from '../../services/heartsService'
 
 import "./Details.css"
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Details = ({ match }) => {
     let buttonStyle = {
@@ -25,6 +27,7 @@ const Details = ({ match }) => {
         textDecoration: "none"
 
     }
+    const {productId} = useParams()
     const [product, setProduct] = useState([])
     let id = match.params.productId
     useEffect(() => {
@@ -39,6 +42,23 @@ const Details = ({ match }) => {
     }
     let { user } = useAuthContext()
 
+    const loveHandler = (e) => {
+        if(user._id === product._ownerId){
+            return
+        }
+
+        if(product.hearts.includes(user._id)){
+            //ToDo
+            return
+        }
+
+        heartsService.like(productId, user._id, product, user.accessToken)
+        .then((res) => {
+            setProduct(state => ({...product, hearts: [...state.hearts, user._id]}))
+            
+        })
+    }
+
     let ownerButtons = (
         <div>
             <Link style={buttonStyle} to={`/edit/${product._id}`}>Edit</Link>
@@ -48,7 +68,7 @@ const Details = ({ match }) => {
     )
     let likeButtons = (
 
-        <button className='btn btn-outline-danger'>
+        <button onClick={loveHandler} className='btn btn-outline-danger'>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
             </svg> Love</button>
