@@ -21,7 +21,8 @@ export const login = async (email, password) => {
     }
 };
 
-export const register = async (email, password) => {
+export const register = async (email, password, rePassword) => {
+    if(password === rePassword){
     let res =  await fetch(`${baseUrl}/users/register`, {
         method: 'POST',
         headers: {
@@ -35,6 +36,9 @@ export const register = async (email, password) => {
     }else{
         throw jsonResult.message;
     }
+}else{
+    throw 'Confirmation password does not match!';
+}
     
     
 
