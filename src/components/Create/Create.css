@@ -58,3 +58,13 @@ h4{
 .active{
     border: 1px solid #0071c5;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.alert.show{
+    margin-bottom: 25px;
+    min-width: 652px;
+}
