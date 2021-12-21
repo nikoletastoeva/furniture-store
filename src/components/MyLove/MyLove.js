@@ -1,8 +1,10 @@
 
+import { Redirect } from "react-router-dom"
 import { useContext, useEffect, useState } from "react/cjs/react.development"
 import { useAuthContext } from "../../contexts/AuthContext"
 
 import * as heartsService from '../../services/heartsService' 
+import Login from "../auth/Login"
 import ProductCardCustom from "../ProductCardCustom/ProductCardCustom"
 
 
@@ -10,8 +12,11 @@ import "./MyLove.css"
 
 const MyLove = () => {
 
+
     const { user } = useAuthContext()
     const [myLove, setMylove] = useState([])
+
+
 
 useEffect(() => {
     heartsService.getMyLove(user._id)
