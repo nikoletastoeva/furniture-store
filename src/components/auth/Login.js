@@ -2,6 +2,8 @@ import * as authService from '../../services/authService'
 import { Link } from "react-router-dom";
 import "./Login.css"
 import { useAuthContext } from '../../contexts/AuthContext';
+import { useState } from 'react/cjs/react.development';
+import { Alert } from 'react-bootstrap';
 
 const Login = ({history}) => {
     let buttonStyle = {
@@ -20,7 +22,7 @@ const Login = ({history}) => {
         color: "#fefefe"
 
     }
-	
+	const [errors, setErrors] = useState({message: false})
 	const {login} = useAuthContext()
 
 	const onLoginHandler = (e) => {
@@ -39,7 +41,7 @@ const Login = ({history}) => {
 			history.push('/')
 		})
 		.catch(err => {
-			console.log(err);
+			setErrors(state => ({...state, message: err}));
 		})
 		
 	}
@@ -62,15 +64,15 @@ const Login = ({history}) => {
 										</div>
 
 										<form onSubmit={onLoginHandler} method="POST">
-											
+										<Alert variant="danger" show={errors.message}>{errors.message}</Alert>
 
 											<div className="form-outline mb-4">
-												<input type="email" id="form2Example11" name="email" className="form-control"  />
+												<input type="email" id="form2Example11" name="email" className="form-control" required />
 												<label className="form-label" to="form2Example11">Username</label>
 											</div>
 
 											<div className="form-outline mb-4">
-												<input type="password" id="form2Example22" name="password" className="form-control" />
+												<input type="password" id="form2Example22" name="password" className="form-control" required/>
 												<label className="form-label" to="form2Example22">Password</label>
 											</div>
 

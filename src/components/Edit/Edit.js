@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Container } from "react-bootstrap"
+import { Alert, Container } from "react-bootstrap"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { useState } from "react/cjs/react.development"
 import { useAuthContext } from "../../contexts/AuthContext"
@@ -23,6 +23,7 @@ const Edit = ({ match, history }) => {
         color: "#fefefe"
 
     }
+    const [errors, setErrors] = useState({name: false, title: false, price:false, description: false})
     const { user } = useAuthContext()
     let [imageUrl, setImageUrl] = useState('')
     let [product, setProduct] = useState({})
@@ -101,6 +102,46 @@ const Edit = ({ match, history }) => {
 
     }
 
+    const titleChangeHandler = (e) => {
+        let currentName = e.target.value;
+        if (currentName.length < 5) {
+            setErrors(state => ({...state, title: 'Your title sould be at least 5 characters!'}))
+        } else {
+            setErrors(state => ({...state, title: false}))
+        }
+
+    }
+
+    const nameChangeHandler = (e) => {
+        let currentName = e.target.value;
+        if (currentName.length < 2) {
+            setErrors(state => ({...state, name: 'Your name sould be at least 2 characters!'}))
+        } else {
+            setErrors(state => ({...state, name: false}))
+        }
+
+    }
+
+    const priceChangeHandler = (e) => {
+        let currentName = e.target.value;
+        if (currentName.length < 2) {
+            setErrors(state => ({...state, price: 'Your price sould be at least 2 numbers!'}))
+        } else {
+            setErrors(state => ({...state, price: false}))
+        }
+
+    }
+
+    const descriptionChangeHandler = (e) => {
+        let currentName = e.target.value;
+        if (currentName.length > 100) {
+            setErrors(state => ({...state, description: 'Your description sould be max 100 characters!'}))
+        } else {
+            setErrors(state => ({...state, description: false}))
+        }
+
+    }
+
     return (
 
         <Container>
@@ -133,16 +174,24 @@ const Edit = ({ match, history }) => {
                     </div>
                     <div className="title">
 
-                        <input type='text' name="title" defaultValue={product.title}/>
+                        <input type='text' name="title" defaultValue={product.title} onBlur={titleChangeHandler}/>
+                        <Alert variant="danger" show={errors.title}>{errors.title}</Alert>
+                    </div>
+                    <div className="by">
+
+                        <input type='text' name="by" defaultValue={product.by} onBlur={nameChangeHandler}/>
+                        <Alert variant="danger" show={errors.name}>{errors.name}</Alert>
                     </div>
                     <div className="price">
                         <p>
-                            <input type='text' name="price" defaultValue={product.price}/> &euro;
+                            <input type='text' name="price" defaultValue={product.price} onBlur={priceChangeHandler}/> &euro;
                         </p>
+                        <Alert variant="danger" show={errors.price}>{errors.price}</Alert>
                     </div>
                     <div className="description">
                         <h4 htmlFor="description">Description</h4>
-                        <input type='text' name="description" defaultValue={product.description} />
+                        <input type='text' name="description" defaultValue={product.description} onBlur={descriptionChangeHandler}/>
+                        <Alert variant="danger" show={errors.description}>{errors.description}</Alert>
                     </div>
                     <input type="submit" value="Edit" style={buttonStyle} />
 
