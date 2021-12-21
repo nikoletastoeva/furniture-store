@@ -2,7 +2,7 @@
 
 export const like = (productId, userId, product, token) => {
     return fetch('http://localhost:3030/data/hearts', {
-        method: 'POST',
+        method: 'POST',      
         headers: {
             'content-type': 'aplication/json',
             'X-Authorization': token
@@ -26,14 +26,19 @@ export const getMyLove = async (userId) => {
 
 export const getOneHeart = async (productId, userId) => {
     let res = await fetch('http://localhost:3030/data/hearts')
-    let allHearts = await res.json()
+    if(res.ok){
+        
+        let allHearts = await res.json()
         let myLove = allHearts.filter(h => h.userId == userId)
         let heart = myLove.find(p => p.productId == productId)
     if(heart){
+        console.log(heart);
         return heart._id
     }else{
         return false
     }
+    }
+    
     
 }
 
