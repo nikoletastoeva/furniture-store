@@ -15,7 +15,7 @@ export const getMyLove = async (userId) => {
 
     if (res.ok) {
         let allHearts = await res.json()
-        let myLove = allHearts.filter(h => h.userId == userId)
+        let myLove = allHearts.filter(h => h.userId === userId)
         let productData = myLove.map(p => p.product)
         return productData
     } else {
@@ -29,14 +29,15 @@ export const getOneHeart = async (productId, userId) => {
     if(res.ok){
         
         let allHearts = await res.json()
-        let myLove = allHearts.filter(h => h.userId == userId)
-        let heart = myLove.find(p => p.productId == productId)
+        let myLove = allHearts.filter(h => h.userId === userId)
+        let heart = myLove.find(p => p.productId === productId)
     if(heart){
-        console.log(heart);
         return heart._id
     }else{
         return false
     }
+    }else{
+        return []
     }
     
     
