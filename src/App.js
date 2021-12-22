@@ -15,7 +15,7 @@ import DetailsCustomProduct from "./components/DetailsCustomProduct/DetailsCusto
 import MyLove from "./components/MyLove/MyLove";
 import Logout from "./components/Logout";
 import Page404 from "./components/Page404/Page404";
-import { GuardedRoute } from "./components/Comon/GuardedRoute";
+import { GuardedRoute } from "./components/Common/GuardedRoute";
 
 
 
