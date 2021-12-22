@@ -52,9 +52,9 @@ input[name="description"]{
     margin-bottom: 10px;
 }
 h4{
-    font-weight: 300!important;
+    font-weight: 400!important;
 }
 
 .active{
-    border: 1px solid #0071c5;
+    border: 5px solid #b3b3b3;
 }

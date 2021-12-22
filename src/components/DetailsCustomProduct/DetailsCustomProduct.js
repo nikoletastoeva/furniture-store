@@ -8,7 +8,7 @@ import * as heartsService from '../../services/heartsService'
 
 import "./DetailsCustomProduct.css"
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import { Alert } from 'react-bootstrap';
+
 
 
 const DetailsCustomProduct = ({ history }) => {
@@ -88,19 +88,19 @@ const DetailsCustomProduct = ({ history }) => {
 
     let ownerButtons = (
         <div>
-            <Link style={buttonStyle} to={`/edit/${product._id}`}>Edit</Link>
-            <button style={buttonStyle} onClick={deleteHandler}>Delete</button>
+            <Link className="btnDetailsCustom" to={`/edit/${product._id}`}>Edit</Link>
+            <button className="btnDetailsCustom" onClick={deleteHandler}>Delete</button>
         </div>
 
     )
     let likeButtons = (
-        
-            <button onClick={loveHandler} className={classNameLoveBtn} disabled={product.hearts?.includes(user._id)}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
-                    <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
-                </svg> Love</button>
-           
-      
+
+        <button onClick={loveHandler} className={classNameLoveBtn} disabled={product.hearts?.includes(user._id)}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+            </svg> Love</button>
+
+
     )
 
     let disLikeButtons = (
@@ -115,39 +115,39 @@ const DetailsCustomProduct = ({ history }) => {
 
 
     return (
+        <div className='p-5'>
+            <Container className="detailsContainer">
 
-        <Container className="" style={{ "backgroundColor": "white", "boxShadow": "1px 1px 5px 1px rgb(0 0 0 / 10%)", "borderRadius": "5px" }}>
+                <h2 className="text-center pt-5">{product.title}</h2>
+                <div className="row align-items-center">
+                    <div className="col-lg-6 order-lg-2 ">
+                        <p><b>Type:</b> {product.type}</p>
+                        <p><b>By:</b> {product.by}</p>
+                        <p><b>Price:</b> {product.price} &euro;</p>
+                        <p>{product.description}</p>
 
-            <h2 className="text-center p-5">{product.title}</h2>
-            <div className="row align-items-center">
-                <div className="col-lg-6 order-lg-2 ">
-                    <p><b>Type:</b> {product.type}</p>
-                    <p><b>By:</b> {product.by}</p>
-                    <p><b>Price:</b> {product.price} &euro;</p>
-                    <p>{product.description}</p>
+                        {user.email && (user._id === product._ownerId
+                            ? ownerButtons
+                            : likeButtons)}
 
-                    {user.email && (user._id == product._ownerId
-                        ? ownerButtons
-                        : likeButtons)}
+                        {user.email
+                            ? disLikeButtons
+                            : ""
+                        }
 
-                    {user.email
-                        ? disLikeButtons
-                        : ""
-                    }
+                    </div>
+                    <div className="col-lg-6 order-lg-1">
 
+                        <p className="img">
+                            <img src={`/${product.imageUrl}`} alt="" className='rounded mx-auto d-block' style={{ "width": "400px" }} />
+                        </p>
+                    </div>
                 </div>
-                <div className="col-lg-6 order-lg-1">
-
-                    <p className="img">
-                        <img src={`/${product.imageUrl}`} alt="" className='rounded mx-auto d-block' style={{ "width": "400px" }} />
-                    </p>
-                </div>
-            </div>
 
 
 
-        </Container>
-
+            </Container>
+        </div>
     )
 }
 export default DetailsCustomProduct

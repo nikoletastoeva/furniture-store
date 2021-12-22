@@ -1,0 +1,16 @@
+.buttonStyle{
+    font-size: 16px;
+    line-height: 16px;
+    border-radius: 50px 50px 50px 50px;
+    overflow: hidden;
+    border-width: 0px;
+    padding-top: 12px;
+    padding-right: 64px;
+    padding-bottom: 12px;
+    padding-left: 64px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: #fefefe !important;
+    text-decoration: none;
+}

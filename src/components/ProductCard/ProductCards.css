@@ -113,14 +113,17 @@ div {
     padding-bottom: 34px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    margin-top: 0px
+    margin-top: 0px;
+    background-color: #f3f3f3f3
+    
+ 
 }
 
 .bbb_deals_title {
     position: absolute;
     top: 10px;
     left: 22px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     color: #000000
 }
@@ -157,12 +160,10 @@ div {
     color: rgba(0, 0, 0, 0.6)
 }
 
-.bbb_deals_item_price_a strike {
-    color: red
-}
+
 
 .bbb_deals_item_name {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: #000000
 }
@@ -211,6 +212,6 @@ div {
 
     .bbb_deals_item_name,
     .bbb_deals_item_price {
-        font-size: 20px
+        font-size: 16px
     }
 }

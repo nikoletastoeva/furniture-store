@@ -1,3 +1,26 @@
 .hide{
     display: none
 }
+
+.detailsContainer{
+    background-color: #f3f3f3f3;
+    box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 10%);
+    border-radius: 5px;
+}
+.btnDetailsCustom{
+        font-size: 16px;
+        line-height: 16px;
+        border-radius: 50px 50px 50px 50px;
+        overflow: hidden;
+        border-width: 0px;
+        padding-top: 12px;
+        padding-right: 64px;
+        padding-bottom: 12px;
+        padding-left: 64px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: #fefefe !important;
+        text-decoration: none;
+       
+}

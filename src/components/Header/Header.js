@@ -10,7 +10,7 @@ import "./Header.css"
 const Header = () => {
     let styleButton = {
         color: '#000000',
-        fontСize: '12px',
+        fontSize: '15px',
         lineHeight: '14px',
         display: 'inline-block',
         border: '1px solid #eee',
@@ -20,6 +20,7 @@ const Header = () => {
         textAlign: 'center',
         padding: '24px 13px 24px 13px',
         backgroundColor: '#F2F3F3',
+        textDecoration: "none"
     }
     let { user } = useAuthContext()
 
@@ -37,7 +38,7 @@ const Header = () => {
     )
 
     return (
-        <Navbar sticky="top" style={{ backgroundColor: "#f5f0ec", borderBottom: "1px", borderBottomColor: "#e6dbd1", borderBottomStyle: "solid" }}>
+        <Navbar sticky="top" >
             <Container>
                 <Navbar.Brand to="/" as={Link}><img
                     src="/StudioNovo.png"
@@ -54,7 +55,7 @@ const Header = () => {
 
 
                     {user.email
-                        ? <Button to="/create" as={Link} style={styleButton}>Create product</Button>
+                        ? <Button variant="light" to="/create" as={Link} style={styleButton}>Create product</Button>
                         : ""
                     }
                     

@@ -1,32 +1,18 @@
 import { useEffect } from "react"
 import { Alert, Container } from "react-bootstrap"
-import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { useState } from "react/cjs/react.development"
 import { useAuthContext } from "../../contexts/AuthContext"
 import * as itemsService from '../../services/itemsService'
 import "./Edit.css"
 
 const Edit = ({ match, history }) => {
-    let buttonStyle = {
-        fontSize: "16px",
-        lineHeight: "16px",
-        borderRadius: '50px 50px 50px 50px',
-        overflow: 'hidden',
-        borderWidth: "0px",
-        paddingTop: '12px',
-        paddingRight: '64px',
-        paddingBottom: '12px',
-        paddingLeft: '64px',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: 'black',
-        color: "#fefefe"
-
-    }
+    
+    
     const [errors, setErrors] = useState({name: false, title: false, price:false, description: false})
     const { user } = useAuthContext()
-    let [imageUrl, setImageUrl] = useState('')
+    
     let [product, setProduct] = useState({})
+    let [imageUrl, setImageUrl] = useState('')
     const productId = match.params.productId
 
     let imagesChair = ["ringo.jpg", "freedom.jpg", "tn50.jpg"]
@@ -43,13 +29,14 @@ const Edit = ({ match, history }) => {
             .then(result => {
                 setProduct(result)
                 setSelectedType(result.type)
-                if(result.type == 'chairs'){
+                setImageUrl(result.imageUrl)
+                if(result.type === 'chairs'){
                     setImageUrls(imagesChair)
                   }
-                  if(result.type == 'sit-stand'){
+                  if(result.type === 'sit-stand'){
                     setImageUrls(imagesSitStand)
                   }
-                  if(result.type == 'work-tools'){
+                  if(result.type === 'work-tools'){
                     setImageUrls(imagesTools)
                   }
                
@@ -75,13 +62,13 @@ const Edit = ({ match, history }) => {
         
         setSelectedType(e.target.value);
 
-        if (e.target.value == 'chairs') {
+        if (e.target.value === 'chairs') {
             setImageUrls(imagesChair)
 
-        } else if (e.target.value == 'sit-stand') {
+        } else if (e.target.value === 'sit-stand') {
             setImageUrls(imagesSitStand)
 
-        } else if (e.target.value == 'work-tools') {
+        } else if (e.target.value === 'work-tools') {
             setImageUrls(imagesTools)
 
         }
@@ -143,10 +130,10 @@ const Edit = ({ match, history }) => {
     }
 
     return (
-
-        <Container>
-            <section className="create-container">
-                <h2 className="p-5 ms-5">Edit your product</h2>
+<div className="p-1">
+        <Container className='createContainer'>
+            
+                <h2 className="text-center p-5">Edit your product</h2>
                 <form className="create-form " method='PUT' onSubmit={onEditHandler} >
                     <div className="type">
                         <label htmlFor="chairs">
@@ -174,33 +161,33 @@ const Edit = ({ match, history }) => {
                     </div>
                     <div className="title">
 
-                        <input type='text' name="title" defaultValue={product.title} onBlur={titleChangeHandler}/>
+                        <input className="form-control-lg" type='text' name="title" defaultValue={product.title} onBlur={titleChangeHandler}/>
                         <Alert variant="danger" show={errors.title}>{errors.title}</Alert>
                     </div>
                     <div className="by">
 
-                        <input type='text' name="by" defaultValue={product.by} onBlur={nameChangeHandler}/>
+                        <input className="form-control-lg" type='text' name="by" defaultValue={product.by} onBlur={nameChangeHandler}/>
                         <Alert variant="danger" show={errors.name}>{errors.name}</Alert>
                     </div>
                     <div className="price">
                         <p>
-                            <input type='text' name="price" defaultValue={product.price} onBlur={priceChangeHandler}/> &euro;
+                            <input type='text' className="form-control-lg" name="price" defaultValue={product.price} onBlur={priceChangeHandler}/>
                         </p>
                         <Alert variant="danger" show={errors.price}>{errors.price}</Alert>
                     </div>
                     <div className="description">
                         <h4 htmlFor="description">Description</h4>
-                        <input type='text' name="description" defaultValue={product.description} onBlur={descriptionChangeHandler}/>
+                        <textarea className="form-control-lg" type='text' name="description" defaultValue={product.description} onBlur={descriptionChangeHandler}></textarea>
                         <Alert variant="danger" show={errors.description}>{errors.description}</Alert>
                     </div>
-                    <input type="submit" value="Edit" style={buttonStyle} />
+                    <input type="submit" value="Edit" className="buttonStyle" />
 
                 </form>
 
-            </section>
+            
 
         </Container>
-
+        </div>
     )
 }
 export default Edit

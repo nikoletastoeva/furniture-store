@@ -1,5 +1,19 @@
+.buttonStyle{
+        font-size: 16px;
+        line-height: 16px;
+        border-radius: 50px 50px 50px 50px;
+        overflow: hidden;
+        border-width: 0px;
+        padding-top: 12px;
+        padding-right: 64px;
+        padding-bottom: 12px;
+        padding-left: 64px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: #fefefe
+}
 .create-container{
-    max-width: 80%;
     display: block;
     justify-content: flex-end;
     flex-wrap: nowrap;
@@ -18,6 +32,23 @@
     
 }
 
+.createContainer{
+    background-color: #f3f3f3f3;
+    box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 10%);
+    border-radius: 5px;
+    display: block;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    background: center;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 4%;   
+}
+
 .images {
      max-block-size: fit-content;
        max-width: 200px;
@@ -28,13 +59,8 @@
         /* justify-content: space-between; */
         /* align-items: baseline; */
     }
-label{
-    margin-right: 25px;
-    margin-bottom: 25px;
-}
-.create-form{
-    padding-left: 12%;
-}
+
+
 input[type="radio"]{
     margin-right: 5px;
 }
@@ -46,25 +72,31 @@ input[name="title"]{
     min-width: 652px;
     border: solid 1px #b3b3b3;
 }
-input[name="description"]{
+input[name="price"]{
+    margin-bottom: 25px;
+    min-width: 240px;
+    border: solid 1px #b3b3b3;
+}
+input[name="by"]{
+    margin-bottom: 25px;
+    min-width: 240px;
+    border: solid 1px #b3b3b3;
+}
+textarea[name="description"]{
     min-width: 652px;
     min-height: 100px;
     margin-bottom: 10px;
+    border: solid 1px #b3b3b3;
 }
 h4{
     font-weight: 300!important;
 }
 
 .active{
-    border: 1px solid #0071c5;
+    border: 5px solid #b3b3b3;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.alert.show{
-    margin-bottom: 25px;
-    min-width: 652px;
 }

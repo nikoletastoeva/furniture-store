@@ -24,7 +24,7 @@ const ProductCard = (match) => {
 
     return (
 
-        <div className="col-md-4">
+        <div className="col-md-4 pt-5">
             <div className="bbb_deals">
                 <div className="bbb_deals_slider_container">
                     <div className=" bbb_deals_item">
@@ -39,7 +39,7 @@ const ProductCard = (match) => {
                             </div>
                             <div className="bbb_deals_info_line d-flex flex-row justify-content-start">
                                 <div className="bbb_deals_item_name">By {match.product.by}</div>
-                                <div className="bbb_deals_item_price ml-auto">{match.product.price} &euro;</div>
+                                <div className="bbb_deals_item_price">{match.product.price} &euro;</div>
                             </div>
                             <div className=" d-flex flex-row justify-content-start">
                                 <Link to={`details/${match.product._id}`} style={buttonStyle}>Details</Link>
