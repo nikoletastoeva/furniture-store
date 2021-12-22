@@ -5,7 +5,7 @@ const About = () => {
 
 
     return (
-        <div style={{backgroundColor:"#f5f0ec"}}>
+        <div >
             <div className='container px-5'>
                 <div className="row gx-5 align-items-center">
                 <h1 className="display-1 text-center">WHAT WE STAND FOR</h1>
