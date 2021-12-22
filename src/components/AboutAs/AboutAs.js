@@ -8,7 +8,7 @@ const About = () => {
         <div >
             <div className='container px-5'>
                 <div className="row gx-5 align-items-center">
-                <h1 className="display-1 text-center">WHAT WE STAND FOR</h1>
+                <h1 className="display-1 text-center p-5">WHAT WE STAND FOR</h1>
                 <p className="text-center p-5" >Studio Novo is the market leader in elevating the human performance at work through good design and expert knowledge in workplace ergonomics. Our mission is to make it easy for companies to scale their business performance by creating healthy, inspirational and efficient work environments, leveraging our knowledge in furniture/ systems and best workplace practices.</p>
                 </div>
             </div>
