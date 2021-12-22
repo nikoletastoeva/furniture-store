@@ -34,7 +34,7 @@ export const getOneHeart = async (productId, userId) => {
     if(heart){
         return heart._id
     }else{
-        return false
+        return []
     }
     }else{
         return []
