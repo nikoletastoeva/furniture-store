@@ -26,7 +26,10 @@ const CustomProducts = () => {
                         ? (<div className="row row-cols-3">
                                {products.map(x => <ProductCardCustom key={x._id} product={x} />)}
                         </div>)
-                        : <h3 className="text-center p-5">No products created yet</h3>
+                        : <div>
+                        <img className="rounded mx-auto d-block" src="kitty.png" />
+                        <h3 className="text-center p-5 text-muted lead">No products yet</h3>                           
+                    </div>
                     }
                 </div>
             </div>
