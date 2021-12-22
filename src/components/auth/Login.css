@@ -1,4 +1,6 @@
-
+#logoLogin{
+  width: 112px;
+}
   
   @media (min-width: 768px) {
     .gradient-form {
