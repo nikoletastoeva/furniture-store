@@ -47,7 +47,7 @@ const DetailsCustomProduct = ({ history }) => {
         heartsService.getOneHeart(productId, user._id)
             .then(result => {
 
-                if (result) {
+                if (result.length > 0) {
                     setclassNameLoveBtn('hide')
                     setclassNamedisLikeBtn('btn btn-outline-dark')
                 } else {
