@@ -6,22 +6,7 @@ import { useState } from 'react/cjs/react.development';
 import { Alert } from 'react-bootstrap';
 
 const Login = ({history}) => {
-    let buttonStyle = {
-        fontSize: "16px",
-        lineHeight: "16px",
-        borderRadius: '50px 50px 50px 50px',
-        overflow: 'hidden',
-        borderWidth: "0px",
-        paddingTop: '12px',
-        paddingRight: '64px',
-        paddingBottom: '12px',
-        paddingLeft: '64px',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: 'black',
-        color: "#fefefe"
-
-    }
+   
 	const [errors, setErrors] = useState({message: false})
 	const {login} = useAuthContext()
 
@@ -59,7 +44,7 @@ const Login = ({history}) => {
 									<div className="card-body p-md-5 mx-md-4">
 
 										<div className="text-center">
-											<img src="StudioNovo.png" style={{width: "112px"}} alt="logo"/>
+											<img src="StudioNovo.png" id='logoLogin'  alt="logo"/>
 											<h4 className="mt-1 mb-5 pb-1">SMART WORK. GOOD HEALTH. BETTER BUSINESS</h4>
 										</div>
 
@@ -78,7 +63,7 @@ const Login = ({history}) => {
 
 											<div className="text-center pt-1 mb-5 pb-1">
 												
-												<input className="btn btn-primary btn-block fa-lg mb-3" type="submit" style={buttonStyle} value="Log in" />
+												<input className="buttonStyle" type="submit" value="Log in" />
 											</div>
 
 											<div className="d-flex align-items-center justify-content-center pb-4">
