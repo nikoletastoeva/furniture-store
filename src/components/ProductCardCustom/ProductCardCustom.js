@@ -24,7 +24,7 @@ const ProductCardCustom = (match) => {
 
     return (
 
-        <div className="col-md-4">
+        <div className="col-md-4 pt-5">
             <div className="bbb_deals">
                 <div className="bbb_deals_slider_container">
                     <div className=" bbb_deals_item">
