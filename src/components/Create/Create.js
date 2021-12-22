@@ -144,7 +144,7 @@ const Create = ({ history }) => {
 
 
                             <div className="images-for-product">
-                                <a name={imageUrls[0]} onClick={imgSelected} > <img className="images active" src={imageUrls[0]} name={imageUrls[0]} alt="" /></a>
+                                <a name={imageUrls[0]} onClick={imgSelected} > <img className="images" src={imageUrls[0]} name={imageUrls[0]} alt="" /></a>
                                 <a name={imageUrls[1]} onClick={imgSelected} > <img className="images" src={imageUrls[1]} name={imageUrls[1]} alt="" /></a>
                                 <a name={imageUrls[2]} onClick={imgSelected} > <img className="images" src={imageUrls[2]} name={imageUrls[2]} alt="" /></a>
                             </div>
